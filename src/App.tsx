@@ -13,7 +13,9 @@ import {
   Compass,
   Download,
   ChatCircle,
-  DeviceMobile
+  DeviceMobile,
+  AndroidLogo,
+  AppleLogo
 } from "@phosphor-icons/react";
 import fuuLogo from "@/assets/images/fuu.png";
 import fuu1 from "@/assets/images/fuu1.png";
@@ -108,7 +110,7 @@ function App() {
               className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-8 py-3 text-lg"
               onClick={() => window.open('https://apps.apple.com/cn/app/id866768101', '_blank')}
             >
-              <Download className="mr-2" size={20} />
+              <AppleLogo className="mr-2" size={20} />
               App Store 下载
             </Button>
             <Button 
@@ -117,7 +119,7 @@ function App() {
               className="w-full sm:w-auto border-primary text-primary hover:bg-primary hover:text-primary-foreground font-medium px-8 py-3 text-lg"
               onClick={() => window.open('https://m.malink.cn/s/iUZr6f', '_blank')}
             >
-              <Download className="mr-2" size={20} />
+              <AndroidLogo className="mr-2" size={20} />
               安卓下载
             </Button>
           </div>
@@ -226,6 +228,7 @@ function App() {
               className="bg-accent hover:bg-accent/90 text-accent-foreground font-medium px-8"
               onClick={() => window.open('https://apps.apple.com/cn/app/id866768101', '_blank')}
             >
+              <AppleLogo className="mr-2" size={20} />
               立即下载 iOS 版
             </Button>
             <Button 
@@ -234,6 +237,7 @@ function App() {
               className="border-accent text-accent hover:bg-accent hover:text-accent-foreground font-medium px-8"
               onClick={() => window.open('https://m.malink.cn/s/iUZr6f', '_blank')}
             >
+              <AndroidLogo className="mr-2" size={20} />
               立即下载安卓版
             </Button>
           </div>
