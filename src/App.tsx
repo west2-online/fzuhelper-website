@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { 
   GridFour, 
   Calendar, 
@@ -77,6 +78,7 @@ const features = [
 function App() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-secondary/20 to-accent/10">
+      <ThemeToggle />
       {/* Hero Section */}
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5" />
@@ -95,30 +97,30 @@ function App() {
                   alt="福uu Logo" 
                   className="w-16 h-16 md:w-20 md:h-20 rounded-lg"
                 />
-                <h1 className="text-4xl md:text-6xl font-bold text-foreground tracking-wide">福uu</h1>
+                <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold text-foreground tracking-wide">福uu</h1>
               </div>
               
-              <p className="text-xl md:text-2xl font-semibold text-primary mb-6">
+              <p className="text-lg md:text-xl font-semibold text-primary mb-4 md:mb-6">
                 带来不一样的大学生活
               </p>
-              <p className="text-base md:text-lg text-muted-foreground max-w-2xl lg:max-w-none mx-auto lg:mx-0 mb-8 leading-relaxed">福州大学西二在线工作室开发，面向福州大学学生的校园生活APP，助力您的大学生活。</p>
+              <p className="text-sm md:text-base lg:text-lg text-muted-foreground max-w-2xl lg:max-w-none mx-auto lg:mx-0 mb-6 md:mb-8 leading-relaxed">福州大学西二在线工作室开发，面向福州大学学生的校园生活APP，助力您的大学生活。</p>
               
               {/* Download Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-8">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-6 md:mb-8">
                 <Button 
                   size="lg" 
-                  className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-8 py-3 text-lg"
+                  className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-6 md:px-8 py-3 text-base md:text-lg"
                   onClick={() => window.open('https://apps.apple.com/cn/app/id866768101', '_blank')}
                 >
-                  <AppleLogo className="mr-2" size={20} />
+                  <AppleLogo className="mr-2" size={18} />
                   App Store 下载
                 </Button>
                 <Button 
                   size="lg" 
-                  className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-8 py-3 text-lg"
+                  className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-6 md:px-8 py-3 text-base md:text-lg"
                   onClick={() => window.open('https://m.malink.cn/s/iUZr6f', '_blank')}
                 >
-                  <AndroidLogo className="mr-2" size={20} />
+                  <AndroidLogo className="mr-2" size={18} />
                   Android 下载
                 </Button>
               </div>
