@@ -48,6 +48,42 @@
   --radius: 0.75rem;
 }
 
+/* System dark mode using @media query */
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    /* Dark theme maintaining福uu brand identity */
+    --background: oklch(0.08 0.01 245);
+    --foreground: oklch(0.96 0.02 245);
+    --card: oklch(0.12 0.02 245);
+    --card-foreground: oklch(0.94 0.02 245);
+    --popover: oklch(0.12 0.02 245);
+    --popover-foreground: oklch(0.94 0.02 245);
+    
+    /* Brighter primary for dark mode visibility */
+    --primary: oklch(0.72 0.26 245);
+    --primary-foreground: oklch(0.08 0.01 245);
+    
+    /* Dark secondary elements */
+    --secondary: oklch(0.18 0.03 245);
+    --secondary-foreground: oklch(0.8 0.08 245);
+    
+    --muted: oklch(0.15 0.02 245);
+    --muted-foreground: oklch(0.65 0.05 245);
+    
+    /* Accent for dark mode */
+    --accent: oklch(0.25 0.05 245);
+    --accent-foreground: oklch(0.9 0.08 245);
+    
+    --destructive: oklch(0.65 0.22 15);
+    --destructive-foreground: oklch(0.95 0.02 245);
+    
+    --border: oklch(0.22 0.03 245);
+    --input: oklch(0.22 0.03 245);
+    --ring: oklch(0.72 0.26 245);
+  }
+}
+
+/* Explicit dark mode class override */
 .dark {
   /* Dark theme maintaining福uu brand identity */
   --background: oklch(0.08 0.01 245);
@@ -78,6 +114,39 @@
   --border: oklch(0.22 0.03 245);
   --input: oklch(0.22 0.03 245);
   --ring: oklch(0.72 0.26 245);
+}
+
+/* Explicit light mode class override */
+.light {
+  /* Light theme based on福uu logo colors */
+  --background: oklch(0.99 0 0);
+  --foreground: oklch(0.15 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.15 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.15 0 0);
+  
+  /* Primary blue from福uu logo */
+  --primary: oklch(0.65 0.22 245);
+  --primary-foreground: oklch(1 0 0);
+  
+  /* Light blue variations for secondary elements */
+  --secondary: oklch(0.96 0.05 245);
+  --secondary-foreground: oklch(0.45 0.15 245);
+  
+  --muted: oklch(0.97 0.01 245);
+  --muted-foreground: oklch(0.5 0.02 245);
+  
+  /* Accent using a complementary blue tone */
+  --accent: oklch(0.7 0.18 245);
+  --accent-foreground: oklch(1 0 0);
+  
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.98 0 0);
+  
+  --border: oklch(0.92 0.02 245);
+  --input: oklch(0.92 0.02 245);
+  --ring: oklch(0.65 0.22 245);
 }
 
 @theme {
