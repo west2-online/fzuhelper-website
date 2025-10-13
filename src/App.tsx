@@ -12,8 +12,16 @@ import {
   BookOpen, 
   Compass,
   Download,
-  ChatCircle
+  ChatCircle,
+  DeviceMobile
 } from "@phosphor-icons/react";
+import fuuLogo from "@/assets/images/fuu.png";
+import fuu1 from "@/assets/images/fuu1.png";
+import fuu2 from "@/assets/images/fuu2.png";
+import fuu3 from "@/assets/images/fuu3.jpg";
+import fuu4 from "@/assets/images/fuu4.png";
+import fuu5 from "@/assets/images/fuu5.png";
+import fuu6 from "@/assets/images/fuu6.png";
 
 const features = [
   {
@@ -73,9 +81,19 @@ function App() {
           <Badge variant="secondary" className="mb-6 text-sm font-medium">
             原福大助手APP
           </Badge>
-          <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-4 tracking-tight">
-            福uu
-          </h1>
+          
+          {/* Logo and Title */}
+          <div className="flex items-center justify-center gap-4 mb-6">
+            <img 
+              src={fuuLogo} 
+              alt="福uu Logo" 
+              className="w-16 h-16 md:w-20 md:h-20"
+            />
+            <h1 className="text-4xl md:text-6xl font-bold text-foreground tracking-tight">
+              福uu
+            </h1>
+          </div>
+          
           <p className="text-xl md:text-2xl font-semibold text-primary mb-6">
             带来不一样的大学生活
           </p>
@@ -110,6 +128,49 @@ function App() {
             <span className="text-muted-foreground">QQ群:</span>
             <span className="font-mono font-semibold text-foreground select-all">694437914</span>
           </div>
+        </div>
+      </div>
+
+      {/* App Screenshots Section */}
+      <div className="container mx-auto px-4 py-20">
+        <div className="text-center mb-16">
+          <div className="flex items-center justify-center gap-2 mb-4">
+            <DeviceMobile size={32} className="text-primary" />
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+              应用截图预览
+            </h2>
+          </div>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            体验福uu的精美界面设计和丰富功能
+          </p>
+        </div>
+
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 max-w-6xl mx-auto mb-16">
+          {[
+            { img: fuu1, title: "课程表", desc: "清晰的课程安排" },
+            { img: fuu2, title: "成绩查询", desc: "实时查看成绩" },
+            { img: fuu3, title: "一码通", desc: "校园通行必备" },
+            { img: fuu4, title: "学习中心", desc: "座位预约服务" },
+            { img: fuu5, title: "历年卷", desc: "丰富学习资源" },
+            { img: fuu6, title: "空教室", desc: "教室使用情况" }
+          ].map((screenshot, index) => (
+            <div key={index} className="group">
+              <Card className="overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border-border/50 bg-card/80 backdrop-blur-sm">
+                <div className="relative aspect-[9/16] overflow-hidden">
+                  <img 
+                    src={screenshot.img} 
+                    alt={screenshot.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute bottom-0 left-0 right-0 p-3 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <h3 className="font-semibold text-sm mb-1">{screenshot.title}</h3>
+                    <p className="text-xs text-white/90">{screenshot.desc}</p>
+                  </div>
+                </div>
+              </Card>
+            </div>
+          ))}
         </div>
       </div>
 
