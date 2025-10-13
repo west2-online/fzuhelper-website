@@ -221,7 +221,7 @@ function App() {
             { img: fuu6, title: "空教室", desc: "教室使用情况" }
           ].map((screenshot, index) => (
             <div key={index} className="group">
-              <Card className="overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border-border/50 bg-card/80 backdrop-blur-sm">
+              <Card className="text-card-foreground flex flex-col rounded-xl border shadow-sm overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border-border/50 bg-card/80 backdrop-blur-sm">
                 <div className="relative aspect-[9/16] overflow-hidden">
                   <img 
                     src={screenshot.img} 
