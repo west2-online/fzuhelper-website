@@ -1,5 +1,11 @@
-import { Moon, Sun, CircleHalf } from "@phosphor-icons/react";
+import { Moon, Sun, CircleHalf, Check } from "@phosphor-icons/react";
 import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { useKV } from '@github/spark/hooks';
 import { useEffect, useState } from 'react';
 
@@ -37,21 +43,13 @@ export function ThemeToggle() {
     }
   }, [theme]);
 
-  const cycleTheme = () => {
-    setTheme((current) => {
-      if (current === 'system') return 'light';
-      if (current === 'light') return 'dark';
-      return 'system';
-    });
-  };
-
   const getIcon = () => {
     if (theme === 'system') {
       return <CircleHalf size={16} className="text-foreground" />;
     } else if (theme === 'dark') {
-      return <Sun size={16} className="text-foreground" />;
-    } else {
       return <Moon size={16} className="text-foreground" />;
+    } else {
+      return <Sun size={16} className="text-foreground" />;
     }
   };
 
@@ -61,15 +59,41 @@ export function ThemeToggle() {
     return '浅色模式';
   };
 
+  const themeOptions = [
+    { value: 'system', label: '跟随系统', icon: CircleHalf },
+    { value: 'light', label: '浅色模式', icon: Sun },
+    { value: 'dark', label: '深色模式', icon: Moon },
+  ] as const;
+
   return (
-    <Button
-      variant="outline"
-      size="sm"
-      onClick={cycleTheme}
-      title={getTooltip()}
-      className="fixed top-4 right-4 z-50 bg-background/80 backdrop-blur-sm border-border/50 hover:bg-accent/20"
-    >
-      {getIcon()}
-    </Button>
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button
+          variant="outline"
+          size="sm"
+          title={getTooltip()}
+          className="fixed top-4 right-4 z-50 bg-background/80 backdrop-blur-sm border-border/50 hover:bg-accent/20"
+        >
+          {getIcon()}
+        </Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="end" className="min-w-[140px]">
+        {themeOptions.map(({ value, label, icon: Icon }) => (
+          <DropdownMenuItem
+            key={value}
+            onClick={() => setTheme(value)}
+            className="flex items-center justify-between cursor-pointer"
+          >
+            <div className="flex items-center gap-2">
+              <Icon size={16} className="text-muted-foreground" />
+              <span>{label}</span>
+            </div>
+            {theme === value && (
+              <Check size={16} className="text-primary" />
+            )}
+          </DropdownMenuItem>
+        ))}
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 }
