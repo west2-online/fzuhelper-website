@@ -86,9 +86,7 @@ function App() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div className="text-center lg:text-left">
-              <Badge variant="secondary" className="mb-6 text-sm font-medium">
-                原福大助手APP
-              </Badge>
+              <Badge variant="outline" className="mb-6 text-sm font-medium bg-primary/10 border-primary/20 text-primary">原福大助手APP</Badge>
               
               {/* Logo and Title */}
               <div className="flex items-center justify-center lg:justify-start gap-4 mb-6">
