@@ -93,7 +93,7 @@ export function ThemeToggle() {
           variant="outline"
           size="sm"
           title={getTooltip()}
-          className="fixed top-4 right-4 z-50 bg-background/80 backdrop-blur-sm border-border/50 hover:bg-accent/20"
+          className="bg-background/80 backdrop-blur-sm border-border/50 hover:bg-accent/20 dark:border-border/80"
         >
           {getIcon()}
         </Button>
