@@ -6,13 +6,34 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { useKV } from '@github/spark/hooks';
 import { useEffect, useState } from 'react';
 
 type Theme = 'light' | 'dark' | 'system';
 
+function useThemeStorage(key: string, defaultValue: Theme) {
+  const [value, setValue] = useState<Theme>(() => {
+    try {
+      const stored = localStorage.getItem(key);
+      return stored ? JSON.parse(stored) : defaultValue;
+    } catch {
+      return defaultValue;
+    }
+  });
+
+  const setStoredValue = (newValue: Theme) => {
+    setValue(newValue);
+    try {
+      localStorage.setItem(key, JSON.stringify(newValue));
+    } catch {
+      // Handle storage errors gracefully
+    }
+  };
+
+  return [value, setStoredValue] as const;
+}
+
 export function ThemeToggle() {
-  const [theme, setTheme] = useKV<Theme>('theme', 'system');
+  const [theme, setTheme] = useThemeStorage('theme', 'system');
   const [systemIsDark, setSystemIsDark] = useState(false);
 
   useEffect(() => {
