@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { 
-  GraduationCap, 
+  GridFour, 
   Calendar, 
   Bell, 
   FileText, 
@@ -210,13 +210,16 @@ function App() {
           <div className="flex items-center justify-center gap-2 mb-4">
             <DeviceMobile size={32} className="text-primary" />
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-              更多功能截图
+              功能预览
             </h2>
           </div>
         </div>
 
-        <div className="grid grid-cols-3 gap-6 max-w-4xl mx-auto mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-16">
           {[
+            { img: fuu1, title: "课程表", desc: "清晰的课程安排" },
+            { img: fuu2, title: "成绩查询", desc: "实时查看成绩" },
+            { img: fuu3, title: "一码通", desc: "校园通行必备" },
             { img: fuu4, title: "学习中心", desc: "座位预约服务" },
             { img: fuu5, title: "历年卷", desc: "丰富学习资源" },
             { img: fuu6, title: "空教室", desc: "教室使用情况" }
@@ -245,7 +248,7 @@ function App() {
       <div className="container mx-auto px-4 py-20">
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <GraduationCap size={32} className="text-primary" />
+            <GridFour size={32} className="text-primary" />
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
               主要功能
             </h2>
