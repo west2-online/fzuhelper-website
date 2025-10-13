@@ -107,18 +107,18 @@ function App() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-6 md:mb-8">
                 <Button 
                   size="lg" 
-                  className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-6 md:px-8 py-3 text-base md:text-lg"
+                  className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-6 md:px-8 py-3 text-sm md:text-base"
                   onClick={() => window.open('https://apps.apple.com/cn/app/id866768101', '_blank')}
                 >
-                  <AppleLogo className="mr-2" size={18} />
+                  <AppleLogo className="mr-2" size={16} />
                   App Store 下载
                 </Button>
                 <Button 
                   size="lg" 
-                  className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-6 md:px-8 py-3 text-base md:text-lg"
+                  className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-6 md:px-8 py-3 text-sm md:text-base"
                   onClick={() => window.open('https://m.malink.cn/s/iUZr6f', '_blank')}
                 >
-                  <AndroidLogo className="mr-2" size={18} />
+                  <AndroidLogo className="mr-2" size={16} />
                   Android 下载
                 </Button>
               </div>
