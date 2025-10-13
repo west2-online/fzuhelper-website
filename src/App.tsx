@@ -101,9 +101,7 @@ function App() {
               <p className="text-xl md:text-2xl font-semibold text-primary mb-6">
                 带来不一样的大学生活
               </p>
-              <p className="text-lg text-muted-foreground max-w-2xl lg:max-w-none mx-auto lg:mx-0 mb-8 leading-relaxed">
-                福州大学西二在线工作室开发，面向福州大学学生的校园生活APP，助力您的大学生活。
-              </p>
+              <p className="text-base md:text-lg text-muted-foreground max-w-2xl lg:max-w-none mx-auto lg:mx-0 mb-8 leading-relaxed">福州大学西二在线工作室开发，面向福州大学学生的校园生活APP，助力您的大学生活。</p>
               
               {/* Download Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-8">
@@ -121,7 +119,7 @@ function App() {
                   onClick={() => window.open('https://m.malink.cn/s/iUZr6f', '_blank')}
                 >
                   <AndroidLogo className="mr-2" size={20} />
-                  安卓下载
+                  Android 下载
                 </Button>
               </div>
 
