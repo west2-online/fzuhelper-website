@@ -215,7 +215,7 @@ function App() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-16">
           {[
             { img: fuu1, title: "课程表", desc: "清晰的课程安排" },
             { img: fuu2, title: "成绩查询", desc: "实时查看成绩" },
