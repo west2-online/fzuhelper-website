@@ -93,7 +93,7 @@ function App() {
                 <img 
                   src={fuuLogo} 
                   alt="福uu Logo" 
-                  className="w-16 h-16 md:w-20 md:h-20"
+                  className="w-16 h-16 md:w-20 md:h-20 rounded-lg"
                 />
                 <h1 className="text-4xl md:text-6xl font-bold text-foreground tracking-tight">
                   福uu
