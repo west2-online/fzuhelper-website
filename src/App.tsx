@@ -95,16 +95,14 @@ function App() {
                   alt="福uu Logo" 
                   className="w-16 h-16 md:w-20 md:h-20 rounded-lg"
                 />
-                <h1 className="text-4xl md:text-6xl font-bold text-foreground tracking-tight">
-                  福uu
-                </h1>
+                <h1 className="text-4xl md:text-6xl font-bold text-foreground tracking-wide">福uu</h1>
               </div>
               
               <p className="text-xl md:text-2xl font-semibold text-primary mb-6">
                 带来不一样的大学生活
               </p>
               <p className="text-lg text-muted-foreground max-w-2xl lg:max-w-none mx-auto lg:mx-0 mb-8 leading-relaxed">
-                福州西二在线网络有限公司开发，面向福州高校学生的校园生活APP，助力您的大学生活。
+                福州大学西二在线工作室开发，面向福州大学学生的校园生活APP，助力您的大学生活。
               </p>
               
               {/* Download Buttons */}
@@ -160,7 +158,6 @@ function App() {
           </div>
         </div>
       </div>
-
       {/* App Screenshots Section */}
       <div className="container mx-auto px-4 py-20 lg:hidden">
         <div className="text-center mb-16">
@@ -203,7 +200,6 @@ function App() {
           ))}
         </div>
       </div>
-
       {/* Additional Screenshots for Desktop */}
       <div className="container mx-auto px-4 py-20 hidden lg:block">
         <div className="text-center mb-16">
@@ -243,7 +239,6 @@ function App() {
           ))}
         </div>
       </div>
-
       {/* Features Section */}
       <div className="container mx-auto px-4 py-20">
         <div className="text-center mb-16">
@@ -283,7 +278,6 @@ function App() {
           })}
         </div>
       </div>
-
       {/* Footer CTA */}
       <div className="bg-card/50 backdrop-blur-sm border-t border-border">
         <div className="container mx-auto px-4 py-16 text-center">
@@ -316,7 +310,6 @@ function App() {
           </div>
         </div>
       </div>
-
       {/* Footer */}
       <footer className="bg-muted/30 border-t border-border">
         <div className="container mx-auto px-4 py-8 text-center">
