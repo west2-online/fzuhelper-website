@@ -109,7 +109,7 @@ export default function Home() {
                   className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-6 md:px-8 py-3 text-sm md:text-base"
                   onClick={() => window.open('https://apps.apple.com/cn/app/id866768101', '_blank')}
                 >
-                  <AppleLogo className="mr-2" size={16} />
+                  <AppleLogo size={16} />
                   App Store 下载
                 </Button>
                 <Button 
@@ -117,7 +117,7 @@ export default function Home() {
                   className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-6 md:px-8 py-3 text-sm md:text-base"
                   onClick={() => window.open('https://m.malink.cn/s/iUZr6f', '_blank')}
                 >
-                  <AndroidLogo className="mr-2" size={16} />
+                  <AndroidLogo size={16} />
                   Android 下载
                 </Button>
               </div>
@@ -162,7 +162,7 @@ export default function Home() {
             </h2>
           </div>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            体验福uu的精美界面设计和丰富功能
+            感受福uu的精美界面设计和丰富功能
           </p>
         </div>
 
