@@ -298,7 +298,7 @@ function App() {
               className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-8"
               onClick={() => window.open('https://apps.apple.com/cn/app/id866768101', '_blank')}
             >
-              <AppleLogo className="mr-2" size={20} />
+              <AppleLogo size={20} />
               立即下载 iOS 版
             </Button>
             <Button 
@@ -306,8 +306,8 @@ function App() {
               className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-8"
               onClick={() => window.open('https://m.malink.cn/s/iUZr6f', '_blank')}
             >
-              <AndroidLogo className="mr-2" size={20} />
-              立即下载安卓版
+              <AndroidLogo size={20} />
+              立即下载 Android 版
             </Button>
           </div>
         </div>
