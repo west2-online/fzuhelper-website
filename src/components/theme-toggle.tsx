@@ -1,11 +1,11 @@
-import { Moon, Sun, CircleHalf, Check } from "@phosphor-icons/react";
-import { Button } from "@/components/ui/button";
+import { Moon, Sun, CircleHalf, Check } from '@phosphor-icons/react';
+import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+} from '@/components/ui/dropdown-menu';
 import { useEffect, useState } from 'react';
 
 type Theme = 'light' | 'dark' | 'system';
@@ -42,16 +42,16 @@ export function ThemeToggle() {
     const handleChange = (e: MediaQueryListEvent) => {
       setSystemIsDark(e.matches);
     };
-    
+
     setSystemIsDark(mediaQuery.matches);
     mediaQuery.addEventListener('change', handleChange);
-    
+
     return () => mediaQuery.removeEventListener('change', handleChange);
   }, []);
 
   useEffect(() => {
     const root = document.documentElement;
-    
+
     if (theme === 'system') {
       root.classList.remove('light', 'dark');
       // Let CSS @media queries handle system theme
@@ -109,9 +109,7 @@ export function ThemeToggle() {
               <Icon size={16} className="text-muted-foreground" />
               <span>{label}</span>
             </div>
-            {theme === value && (
-              <Check size={16} className="text-primary" />
-            )}
+            {theme === value && <Check size={16} className="text-primary" />}
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>

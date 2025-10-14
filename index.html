@@ -1,40 +1,38 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="light dark" />
     <title>福uu - 带来不一样的大学生活 | 福州高校学生校园生活APP</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link href="/src/main.css" rel="stylesheet" />
     <script>
-        // Prevent flash of incorrect theme
-        (function() {
-            try {
-                const kvData = localStorage.getItem('spark-kv');
-                if (kvData) {
-                    const parsed = JSON.parse(kvData);
-                    const theme = parsed.theme || 'system';
-                    if (theme === 'dark') {
-                        document.documentElement.classList.add('dark');
-                    } else if (theme === 'light') {
-                        document.documentElement.classList.add('light');
-                    }
-                    // For 'system', let CSS @media handle it
-                }
-            } catch (e) {
-                // Ignore errors - default to system theme
+      // Prevent flash of incorrect theme
+      (function () {
+        try {
+          const kvData = localStorage.getItem('spark-kv');
+          if (kvData) {
+            const parsed = JSON.parse(kvData);
+            const theme = parsed.theme || 'system';
+            if (theme === 'dark') {
+              document.documentElement.classList.add('dark');
+            } else if (theme === 'light') {
+              document.documentElement.classList.add('light');
             }
-        })();
+            // For 'system', let CSS @media handle it
+          }
+        } catch (e) {
+          // Ignore errors - default to system theme
+        }
+      })();
     </script>
-</head>
+  </head>
 
-<body>
+  <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-</body>
-
+  </body>
 </html>

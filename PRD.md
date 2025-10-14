@@ -2,7 +2,8 @@
 
 为福州大学学生打造的校园生活应用官网，展示应用功能并引导用户下载。
 
-**Experience Qualities**: 
+**Experience Qualities**:
+
 1. 现代简洁 - 清爽的设计风格体现应用的便捷性
 2. 信息丰富 - 全面展示应用功能让用户了解价值
 3. 亲和友好 - 温暖的色彩和语调贴近大学生群体
@@ -13,6 +14,7 @@
 ## Essential Features
 
 ### 应用介绍展示
+
 - **功能**: 展示福uu应用的核心价值和主要功能
 - **目的**: 让访问者快速了解应用能为大学生活带来的便利
 - **触发**: 页面加载时自动展示
@@ -20,6 +22,7 @@
 - **成功标准**: 用户能在5秒内理解应用的主要用途
 
 ### 功能特性列表
+
 - **功能**: 详细展示9大核心功能模块
 - **目的**: 让用户了解应用的全面功能覆盖
 - **触发**: 滚动浏览或点击查看更多
@@ -27,6 +30,7 @@
 - **成功标准**: 功能展示清晰，用户能理解每个功能的价值
 
 ### 下载引导
+
 - **功能**: 提供iOS和Android下载链接
 - **目的**: 将访问者转化为应用用户
 - **触发**: 点击下载按钮
@@ -34,6 +38,7 @@
 - **成功标准**: 下载按钮醒目易找，链接正确跳转
 
 ### 社群联系
+
 - **功能**: 展示QQ群号码供用户加入
 - **目的**: 建立用户社群，提供支持渠道
 - **触发**: 查看联系信息区域
@@ -41,40 +46,46 @@
 - **成功标准**: QQ群号清晰展示，易于复制
 
 ## Edge Case Handling
+
 - **移动端访问**: 响应式设计确保手机浏览体验良好
 - **链接失效**: 提供备用联系方式
 - **加载缓慢**: 优化图片和资源加载速度
 
 ## Design Direction
+
 设计应体现年轻、活力、现代感，符合大学生审美，界面简洁不拥挤，信息层次清晰。
 
 ## Color Selection
+
 使用暖色调配色方案，营造友好亲切的氛围，体现校园生活的温暖。
 
 - **Primary Color**: 橙色 `oklch(0.7 0.15 50)` - 传达活力和温暖，体现青春校园氛围
 - **Secondary Colors**: 深蓝色 `oklch(0.3 0.1 240)` 用于文字和辅助元素，营造专业可信感
 - **Accent Color**: 亮橙色 `oklch(0.75 0.18 45)` - 用于CTA按钮和重要提示
-- **Foreground/Background Pairings**: 
+- **Foreground/Background Pairings**:
   - Background (白色 `oklch(0.98 0 0)`): 深灰文字 `oklch(0.2 0 0)` - 比例 15.8:1 ✓
   - Primary (橙色): 白色文字 `oklch(0.98 0 0)` - 比例 5.2:1 ✓
   - Accent (亮橙色): 白色文字 `oklch(0.98 0 0)` - 比例 4.8:1 ✓
 
 ## Font Selection
+
 使用现代无衬线字体，清晰易读，体现科技感和年轻活力。
 
-- **Typographic Hierarchy**: 
+- **Typographic Hierarchy**:
   - H1 (应用名称): Inter Bold/32px/紧凑间距
-  - H2 (功能标题): Inter SemiBold/24px/正常间距  
+  - H2 (功能标题): Inter SemiBold/24px/正常间距
   - Body Text (功能描述): Inter Regular/16px/1.6行高
   - Button Text (下载按钮): Inter Medium/16px/正常间距
 
 ## Animations
+
 使用轻微的滚动动画和悬停效果，增加交互趣味性但不干扰阅读体验。
 
 - **Purposeful Meaning**: 滚动时功能卡片渐入效果，引导用户关注内容
 - **Hierarchy of Movement**: 主要动画集中在CTA按钮和功能展示区域
 
 ## Component Selection
+
 - **Components**: Card组件展示功能，Button组件用于下载链接，Badge组件标识功能分类
 - **Customizations**: 自定义hero区域和功能网格布局
 - **States**: 按钮悬停时颜色加深，卡片悬停时轻微上浮
