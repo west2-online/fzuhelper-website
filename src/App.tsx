@@ -315,8 +315,11 @@ function App() {
       {/* Footer */}
       <footer className="bg-muted/30 border-t border-border">
         <div className="container mx-auto px-4 py-8 text-center">
-          <p className="text-muted-foreground text-sm">
+          <p className="text-muted-foreground text-sm mb-2">
             © 福州西二在线网络有限公司 · 福uu助力您的大学生活
+          </p>
+          <p className="text-muted-foreground text-sm">
+            联系邮箱：<a href="mailto:admin@west2.online" className="text-primary hover:underline">admin@west2.online</a>
           </p>
         </div>
       </footer>
