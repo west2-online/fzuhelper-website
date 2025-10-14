@@ -17,6 +17,28 @@ npm run build     # Build the project
 npm run preview   # Preview the production build
 ```
 
+## Deployment
+
+This project is configured to automatically deploy to GitHub Pages when changes are pushed to the `main` branch.
+
+### Setup Instructions
+
+To enable GitHub Pages deployment:
+
+1. Go to your repository **Settings** → **Pages**
+2. Under **Source**, select **GitHub Actions**
+3. The workflow will automatically run on every push to the `main` branch
+
+The site will be available at: `https://<username>.github.io/<repository-name>/`
+
+### Manual Deployment
+
+You can also trigger a deployment manually:
+
+1. Go to **Actions** tab in your repository
+2. Select the **Deploy to GitHub Pages** workflow
+3. Click **Run workflow**
+
 ## Author
 
 **FzuHelper Website** © [Baoshuo](https://github.com/renbaoshuo).<br>
