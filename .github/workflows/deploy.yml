@@ -22,11 +22,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v6
         with:
-          version: latest
-          cache: true
+          node-version: 22.x
+
+      - run: corepack enable
 
       - name: Install dependencies
         run: pnpm install
