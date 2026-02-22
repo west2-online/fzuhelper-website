@@ -1,23 +1,47 @@
-# ✨ Welcome to Your Spark Template!
-You've just launched your brand-new Spark Template Codespace — everything’s fired up and ready for you to explore, build, and create with Spark!
+# FzuHelper Website
 
-This template is your blank canvas. It comes with a minimal setup to help you get started quickly with Spark development.
+This is the repository for the "福uu" website, which provides landing pages and documentation for the FzuHelper project.
 
-🚀 What's Inside?
-- A clean, minimal Spark environment
-- Pre-configured for local development
-- Ready to scale with your ideas
-  
-🧠 What Can You Do?
+## Features
 
-Right now, this is just a starting point — the perfect place to begin building and testing your Spark applications.
+- **Landing Page**: A user-friendly landing page for the FzuHelper project.
+- **Documentation**: Comprehensive documentation to help users understand and utilize FzuHelper effectively.
+- **Responsive Design**: The website is designed to be responsive and works well on various devices.
 
-🧹 Just Exploring?
-No problem! If you were just checking things out and don’t need to keep this code:
+## Getting Started
 
-- Simply delete your Spark.
-- Everything will be cleaned up — no traces left behind.
+```bash
+pnpm install   # Install dependencies
+pnpm dev       # Start the development server
+pnpm build     # Build the project
+pnpm preview   # Preview the production build
+```
 
-📄 License For Spark Template Resources 
+## Deployment
 
-The Spark Template files and resources from GitHub are licensed under the terms of the MIT license, Copyright GitHub, Inc.
+This project is configured to automatically deploy to GitHub Pages when changes are pushed to the `main` branch.
+
+### Setup Instructions
+
+To enable GitHub Pages deployment:
+
+1. Go to your repository **Settings** → **Pages**
+2. Under **Source**, select **GitHub Actions**
+3. The workflow will automatically run on every push to the `main` branch
+
+The site will be available at: `https://<username>.github.io/<repository-name>/`
+
+### Manual Deployment
+
+You can also trigger a deployment manually:
+
+1. Go to **Actions** tab in your repository
+2. Select the **Deploy to GitHub Pages** workflow
+3. Click **Run workflow**
+
+## Author
+
+**FzuHelper Website** © [Baoshuo](https://github.com/renbaoshuo).<br>
+Authored and maintained by Baoshuo and GitHub Spark with help from [contributors](https://github.com/renbaoshuo/fzuhelper-website/contributors).
+
+> [Personal Website](https://baoshuo.ren) · [Blog](https://blog.baoshuo.ren) · GitHub [@renbaoshuo](https://github.com/renbaoshuo)
