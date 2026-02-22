@@ -1,4 +1,4 @@
-import { Moon, Sun, CircleHalf, Check } from '@phosphor-icons/react';
+import { MoonIcon, SunIcon, CircleHalfIcon, CheckIcon } from '@phosphor-icons/react';
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
@@ -66,11 +66,11 @@ export function ThemeToggle() {
 
   const getIcon = () => {
     if (theme === 'system') {
-      return <CircleHalf size={16} className="text-foreground" />;
+      return <CircleHalfIcon size={16} className="text-foreground" />;
     } else if (theme === 'dark') {
-      return <Moon size={16} className="text-foreground" />;
+      return <MoonIcon size={16} className="text-foreground" />;
     } else {
-      return <Sun size={16} className="text-foreground" />;
+      return <SunIcon size={16} className="text-foreground" />;
     }
   };
 
@@ -81,9 +81,9 @@ export function ThemeToggle() {
   };
 
   const themeOptions = [
-    { value: 'system', label: '跟随系统', icon: CircleHalf },
-    { value: 'light', label: '浅色模式', icon: Sun },
-    { value: 'dark', label: '深色模式', icon: Moon },
+    { value: 'system', label: '跟随系统', icon: CircleHalfIcon },
+    { value: 'light', label: '浅色模式', icon: SunIcon },
+    { value: 'dark', label: '深色模式', icon: MoonIcon },
   ] as const;
 
   return (
@@ -109,7 +109,7 @@ export function ThemeToggle() {
               <Icon size={16} className="text-muted-foreground" />
               <span>{label}</span>
             </div>
-            {theme === value && <Check size={16} className="text-primary" />}
+            {theme === value && <CheckIcon size={16} className="text-primary" />}
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>

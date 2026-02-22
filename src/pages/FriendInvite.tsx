@@ -1,7 +1,7 @@
 import { useSearchParams, Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Users, Copy, ArrowSquareOut, House, WarningCircle } from '@phosphor-icons/react';
+import { UsersIcon, CopyIcon, ArrowSquareOutIcon, HouseIcon, WarningCircleIcon } from '@phosphor-icons/react';
 import { toast } from 'sonner';
 import {
   parseInviteCodeFromSearch,
@@ -84,7 +84,7 @@ export default function FriendInvite() {
             <CardHeader className="text-center pb-4">
               <div className="flex justify-center mb-4">
                 <div className="w-16 h-16 rounded-full bg-muted flex items-center justify-center">
-                  <WarningCircle size={32} className="text-muted-foreground" weight="duotone" />
+                  <WarningCircleIcon size={32} className="text-muted-foreground" weight="duotone" />
                 </div>
               </div>
               <CardTitle className="text-xl md:text-2xl font-bold text-foreground">邀请链接无效</CardTitle>
@@ -95,7 +95,7 @@ export default function FriendInvite() {
             <CardContent className="flex justify-center">
               <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium">
                 <Link to="/">
-                  <House size={20} className="mr-2" />
+                  <HouseIcon size={20} className="mr-2" />
                   返回首页
                 </Link>
               </Button>
@@ -116,7 +116,7 @@ export default function FriendInvite() {
               <CardHeader className="text-center pb-2">
                 <div className="flex justify-center mb-4">
                   <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-primary/10 flex items-center justify-center">
-                    <Users size={32} className="text-primary md:size-10" weight="duotone" />
+                    <UsersIcon size={32} className="text-primary md:size-10" weight="duotone" />
                   </div>
                 </div>
                 <CardTitle className="text-2xl md:text-3xl font-bold text-foreground">好友邀请</CardTitle>
@@ -134,7 +134,7 @@ export default function FriendInvite() {
                     {code}
                   </p>
                   <Button variant="outline" size="sm" className="mt-3 border-border/50" onClick={handleCopyCode}>
-                    <Copy size={16} className="mr-1.5" />
+                    <CopyIcon size={16} className="mr-1.5" />
                     复制邀请码
                   </Button>
                 </div>
@@ -148,7 +148,7 @@ export default function FriendInvite() {
                   className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium py-6 text-base"
                   onClick={handleOpenApp}
                 >
-                  <ArrowSquareOut size={22} className="mr-2" />
+                  <ArrowSquareOutIcon size={22} className="mr-2" />
                   打开福uu添加好友
                 </Button>
 
@@ -160,12 +160,12 @@ export default function FriendInvite() {
 
                 <div className="pt-2 flex flex-wrap gap-2 justify-center">
                   <Button variant="ghost" size="sm" className="text-muted-foreground" onClick={handleCopyLink}>
-                    <Copy size={14} className="mr-1" />
+                    <CopyIcon size={14} className="mr-1" />
                     复制邀请链接
                   </Button>
                   <Button variant="ghost" size="sm" className="text-muted-foreground" asChild>
                     <Link to="/">
-                      <House size={14} className="mr-1" />
+                      <HouseIcon size={14} className="mr-1" />
                       返回首页
                     </Link>
                   </Button>

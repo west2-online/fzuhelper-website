@@ -3,21 +3,21 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { ThemeToggle } from '@/components/theme-toggle';
 import {
-  GridFour,
-  Calendar,
-  Bell,
-  FileText,
-  MapPin,
-  QrCode,
-  Users,
-  Buildings,
-  Compass,
-  Download,
-  ChatCircle,
-  DeviceMobile,
-  AndroidLogo,
-  AppleLogo,
-  BookBookmark,
+  GridFourIcon,
+  CalendarIcon,
+  BellIcon,
+  FileTextIcon,
+  MapPinIcon,
+  QrCodeIcon,
+  UsersIcon,
+  BuildingsIcon,
+  CompassIcon,
+  DownloadIcon,
+  ChatCircleIcon,
+  DeviceMobileIcon,
+  AndroidLogoIcon,
+  AppleLogoIcon,
+  BookBookmarkIcon,
 } from '@phosphor-icons/react';
 import fuuLogo from '@/assets/images/fuu.png';
 import fuu1 from '@/assets/images/fuu1.png';
@@ -29,47 +29,47 @@ import fuu6 from '@/assets/images/fuu6.png';
 
 const features = [
   {
-    icon: Calendar,
+    icon: CalendarIcon,
     title: '课表',
     description: '优雅的课程模块界面，支持各学期切换、课程详情、自定义课程功能。',
   },
   {
-    icon: Bell,
+    icon: BellIcon,
     title: '教务',
     description: '实时推送教务通知，同步更新考场信息，可视化学分、成绩、绩点分布。',
   },
   {
-    icon: FileText,
+    icon: FileTextIcon,
     title: '历年卷',
     description: '丰富的考试资料，助力期末考。',
   },
   {
-    icon: MapPin,
+    icon: MapPinIcon,
     title: '空教室',
     description: '一键查询各时段教学楼空教室情况，帮助寻找自习地点。',
   },
   {
-    icon: QrCode,
+    icon: QrCodeIcon,
     title: '一码通',
     description: '福大一码通，一码通行全校！支持消费码、认证码、图书馆入馆码。',
   },
   {
-    icon: Users,
+    icon: UsersIcon,
     title: '嘉锡讲坛',
     description: '一键报名嘉锡讲坛，轻松了解历次讲座情况。',
   },
   {
-    icon: Buildings,
+    icon: BuildingsIcon,
     title: '学习中心',
     description: '快速预约学习中心座位，避免频繁卡顿。',
   },
   {
-    icon: Compass,
+    icon: CompassIcon,
     title: '校园指南',
     description: '快速上手精彩校园生活。',
   },
   {
-    icon: BookBookmark,
+    icon: BookBookmarkIcon,
     title: '飞跃手册',
     description: '学长学姐的转专业、保研、考研、出国经验手册。',
   },
@@ -110,7 +110,7 @@ export default function Home() {
                   className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-6 md:px-8 py-3 text-sm md:text-base"
                   onClick={() => window.open('https://apps.apple.com/cn/app/id866768101', '_blank')}
                 >
-                  <AppleLogo size={16} />
+                  <AppleLogoIcon size={16} />
                   App Store 下载
                 </Button>
                 <Button
@@ -118,13 +118,13 @@ export default function Home() {
                   className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-6 md:px-8 py-3 text-sm md:text-base"
                   onClick={() => window.open('https://m.malink.cn/s/iUZr6f', '_blank')}
                 >
-                  <AndroidLogo size={16} />
+                  <AndroidLogoIcon size={16} />
                   Android 下载
                 </Button>
               </div>
 
               <div className="inline-flex items-center gap-2 bg-card/80 backdrop-blur-sm border border-border rounded-lg px-4 py-2 text-sm">
-                <ChatCircle size={16} className="text-primary" />
+                <ChatCircleIcon size={16} className="text-primary" />
                 <span className="text-muted-foreground">QQ群:</span>
                 <span className="font-mono font-semibold text-foreground select-all">694437914</span>
               </div>
@@ -157,7 +157,7 @@ export default function Home() {
       <div className="container mx-auto px-4 py-20 lg:hidden">
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <DeviceMobile size={32} className="text-primary" />
+            <DeviceMobileIcon size={32} className="text-primary" />
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">应用截图</h2>
           </div>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">感受福uu的精美界面设计和丰富功能</p>
@@ -194,7 +194,7 @@ export default function Home() {
       <div className="container mx-auto px-4 py-20 hidden lg:block">
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <DeviceMobile size={32} className="text-primary" />
+            <DeviceMobileIcon size={32} className="text-primary" />
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">功能预览</h2>
           </div>
         </div>
@@ -230,7 +230,7 @@ export default function Home() {
       <div className="container mx-auto px-4 py-20">
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <GridFour size={32} className="text-primary" />
+            <GridFourIcon size={32} className="text-primary" />
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">主要功能</h2>
           </div>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -267,7 +267,7 @@ export default function Home() {
       <div className="bg-card/50 backdrop-blur-sm border-t border-border">
         <div className="container mx-auto px-4 py-16 text-center">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <Download size={32} className="text-primary" />
+            <DownloadIcon size={32} className="text-primary" />
             <h3 className="text-2xl md:text-3xl font-bold text-foreground">开启智慧校园生活</h3>
           </div>
           <p className="text-muted-foreground mb-8 max-w-xl mx-auto">立即下载福uu，让大学生活更加便捷高效</p>
@@ -277,7 +277,7 @@ export default function Home() {
               className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-8"
               onClick={() => window.open('https://apps.apple.com/cn/app/id866768101', '_blank')}
             >
-              <AppleLogo size={20} />
+              <AppleLogoIcon size={20} />
               立即下载 iOS 版
             </Button>
             <Button
@@ -285,7 +285,7 @@ export default function Home() {
               className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-8"
               onClick={() => window.open('https://m.malink.cn/s/iUZr6f', '_blank')}
             >
-              <AndroidLogo size={20} />
+              <AndroidLogoIcon size={20} />
               立即下载 Android 版
             </Button>
           </div>

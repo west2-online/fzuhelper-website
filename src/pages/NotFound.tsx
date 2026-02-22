@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { ThemeToggle } from '@/components/theme-toggle';
-import { WarningCircle, House, ArrowLeft } from '@phosphor-icons/react';
+import { WarningCircleIcon, HouseIcon, ArrowLeftIcon } from '@phosphor-icons/react';
 import { useNavigate } from 'react-router-dom';
 
 export default function NotFound() {
@@ -17,7 +17,7 @@ export default function NotFound() {
         <CardHeader className="text-center pb-4">
           <div className="flex justify-center mb-6">
             <div className="w-20 h-20 rounded-full bg-destructive/10 flex items-center justify-center">
-              <WarningCircle size={48} className="text-destructive" weight="duotone" />
+              <WarningCircleIcon size={48} className="text-destructive" weight="duotone" />
             </div>
           </div>
           <CardTitle className="text-4xl md:text-5xl font-bold text-foreground mb-2">404</CardTitle>
@@ -32,11 +32,11 @@ export default function NotFound() {
               className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium"
               onClick={() => navigate('/')}
             >
-              <House size={20} className="mr-2" />
+              <HouseIcon size={20} className="mr-2" />
               返回首页
             </Button>
             <Button size="lg" variant="outline" className="font-medium" onClick={() => navigate(-1)}>
-              <ArrowLeft size={20} className="mr-2" />
+              <ArrowLeftIcon size={20} className="mr-2" />
               返回上一页
             </Button>
           </div>
