@@ -3,14 +3,10 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { UsersIcon, CopyIcon, ArrowSquareOutIcon, HouseIcon, WarningCircleIcon } from '@phosphor-icons/react';
 import { toast } from 'sonner';
-import {
-  parseInviteCodeFromSearch,
-  buildFriendInviteDeepLink,
-  isInAppBrowserBlockingDeepLink,
-} from '@/lib/friend-invite';
+import { parseInviteCodeFromSearch, buildFriendInviteDeepLink, isQQ, getSystem, isWechat } from '@/lib/friend-invite';
 import { useCallback } from 'react';
 
-const DEEPLINK_TIMEOUT_MS = 1800;
+const DEEPLINK_TIMEOUT_MS = 2500;
 
 function copyToClipboard(text: string): boolean {
   if (typeof navigator === 'undefined' || !navigator.clipboard?.writeText) {
@@ -37,33 +33,48 @@ export default function FriendInvite() {
   const [searchParams] = useSearchParams();
   const code = parseInviteCodeFromSearch(searchParams.toString());
   const deeplink = code ? buildFriendInviteDeepLink(code) : '';
-  const isInApp = isInAppBrowserBlockingDeepLink();
 
   const handleOpenApp = useCallback(() => {
     if (!code || !deeplink) {
       toast.error('邀请码无效');
       return;
     }
-
-    const doCopyAndToast = (message: string) => {
-      copyToClipboard(deeplink);
-      toast.success(message, { duration: 4000 });
+    const openInBrowser = () => {
+      toast.info('请点击右上角「…」用浏览器打开', { duration: 4000 });
     };
 
-    if (isInApp) {
-      doCopyAndToast('邀请链接已复制。请点击右上角「…」用浏览器打开后重试，或粘贴到福uu内添加好友。');
-      return;
-    }
+    // 目前方案：
+    // QQ：安卓微下载配置applink，iOS提示在浏览器打开
+    // 微信：提示在浏览器打开
+    // 浏览器：直接调用DeepLink+超时跳转下载
 
-    const previousUrl = window.location.href;
-    window.location.href = deeplink;
+    const tryJump = () => {
+      const system = getSystem();
 
-    setTimeout(() => {
-      if (window.location.href === previousUrl) {
-        doCopyAndToast('若未自动打开福uu，邀请链接已复制到剪贴板，可粘贴到浏览器或福uu内使用。');
+      if (isQQ()) {
+        if (system === 'Android') {
+          // https://wikinew.open.qq.com/index.html#/iwiki/4007776125:~:text=%E7%9A%84%E6%8E%A8%E5%B9%BF%E6%95%88%E6%9E%9C%EF%BC%9A-,2.%C2%A0Applink%E8%83%BD%E5%8A%9B,-1%EF%BC%89%E5%BE%AE%E4%B8%8B%E8%BD%BD
+          window.location.href = `http://a.app.qq.com/o/simple.jsp?pkgname=com.helper.west2ol.fzuhelper&android_schema=${encodeURIComponent(deeplink)}`;
+          return;
+        }
+        openInBrowser();
+        return;
       }
-    }, DEEPLINK_TIMEOUT_MS);
-  }, [code, deeplink, isInApp]);
+      if (isWechat()) {
+        openInBrowser();
+        return;
+      }
+      var timer = null;
+      window.location.href = deeplink;
+      if (timer) clearTimeout(timer);
+      timer = setTimeout(() => {
+        // 跳转下载页
+        window.location.href = 'https://m.malink.cn/s/iUZr6f';
+      }, DEEPLINK_TIMEOUT_MS);
+    };
+
+    tryJump();
+  }, [code, deeplink]);
 
   const handleCopyCode = useCallback(() => {
     if (!code) return;
@@ -151,12 +162,6 @@ export default function FriendInvite() {
                   <ArrowSquareOutIcon size={22} className="mr-2" />
                   打开福uu添加好友
                 </Button>
-
-                {isInApp && (
-                  <p className="text-xs md:text-sm text-muted-foreground text-center rounded-lg bg-muted/40 border border-border/50 p-3">
-                    当前在微信/QQ 内打开，可能无法直接跳转。请点击上方按钮复制链接后，在浏览器中打开或粘贴到福uu内使用。
-                  </p>
-                )}
 
                 <div className="pt-2 flex flex-wrap gap-2 justify-center">
                   <Button variant="ghost" size="sm" className="text-muted-foreground" onClick={handleCopyLink}>

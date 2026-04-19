@@ -39,18 +39,29 @@ export function buildFriendInviteDeepLink(code: string): string {
 }
 
 /** 是否在微信内置浏览器 */
-export function isWechatBrowser(): boolean {
+export function isWechat(): boolean {
   if (typeof navigator === 'undefined') return false;
-  return /MicroMessenger/i.test(navigator.userAgent);
+  return /micromessenger\//i.test(navigator.userAgent.toLowerCase());
 }
 
 /** 是否在 QQ 内置浏览器 */
-export function isQQBrowser(): boolean {
+export function isQQ(): boolean {
   if (typeof navigator === 'undefined') return false;
-  return /QQ\//i.test(navigator.userAgent) || /MQQBrowser/i.test(navigator.userAgent);
+  return /qq\//i.test(navigator.userAgent.toLowerCase()) || /mqqbrowser\//i.test(navigator.userAgent.toLowerCase());
 }
 
-/** 是否在可能拦截 DeepLink 的国内应用内（微信、QQ 等） */
-export function isInAppBrowserBlockingDeepLink(): boolean {
-  return isWechatBrowser() || isQQBrowser();
+export function getSystem(): 'Android' | 'iOS' | 'Harmony' | 'PC' {
+  const u = navigator.userAgent;
+  const isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1;
+  const isIOS = /iphone|ipad|ipod/i.test(u.toLowerCase());
+  const isHarmony = u.indexOf('Harmony') > -1 || u.indexOf('ArkWeb') > -1;
+  if (isAndroid) {
+    return 'Android';
+  } else if (isIOS) {
+    return 'iOS';
+  } else if (isHarmony) {
+    return 'Harmony';
+  } else {
+    return 'PC';
+  }
 }
