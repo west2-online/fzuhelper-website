@@ -158,9 +158,8 @@ export default function Home() {
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-2 mb-4">
             <DeviceMobileIcon size={32} className="text-primary" />
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground">应用截图</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground">功能预览</h2>
           </div>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">感受福uu的精美界面设计和丰富功能</p>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-16">
