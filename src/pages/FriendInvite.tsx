@@ -4,9 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { UsersIcon, CopyIcon, ArrowSquareOutIcon, HouseIcon, WarningCircleIcon } from '@phosphor-icons/react';
 import { toast } from 'sonner';
 import { parseInviteCodeFromSearch, buildFriendInviteDeepLink, isQQ, getSystem, isWechat } from '@/lib/friend-invite';
-import { useCallback } from 'react';
-
-const DEEPLINK_TIMEOUT_MS = 2500;
+import { useCallback, useRef } from 'react';
 
 function copyToClipboard(text: string): boolean {
   if (typeof navigator === 'undefined' || !navigator.clipboard?.writeText) {
@@ -33,6 +31,7 @@ export default function FriendInvite() {
   const [searchParams] = useSearchParams();
   const code = parseInviteCodeFromSearch(searchParams.toString());
   const deeplink = code ? buildFriendInviteDeepLink(code) : '';
+  const timerRef = useRef<number | null>(null);
 
   const handleOpenApp = useCallback(() => {
     if (!code || !deeplink) {
@@ -64,13 +63,17 @@ export default function FriendInvite() {
         openInBrowser();
         return;
       }
-      var timer = null;
       window.location.href = deeplink;
-      if (timer) clearTimeout(timer);
-      timer = setTimeout(() => {
+      if (timerRef.current) clearTimeout(timerRef.current);
+      timerRef.current = setTimeout(() => {
         // 跳转下载页
         window.location.href = 'https://m.malink.cn/s/iUZr6f';
-      }, DEEPLINK_TIMEOUT_MS);
+      }, 2500);
+
+      // 如果跳转成功就不再跳转下载页
+      document.addEventListener('visibilitychange', () => {
+        clearTimeout(timerRef.current!);
+      });
     };
 
     tryJump();
