@@ -118,7 +118,7 @@ export default function FriendInvite() {
   }
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-background via-secondary/20 to-accent/10">
+    <div className="bg-linear-to-br from-background via-secondary/20 to-accent/10">
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 bg-linear-to-r from-primary/5 to-accent/5" />
         <div className="relative container mx-auto px-4 py-12 md:py-20">
