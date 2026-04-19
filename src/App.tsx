@@ -19,7 +19,7 @@ function App() {
       <footer className="bg-muted/30 border-t border-border">
         <div className="container mx-auto px-4 py-8 text-center">
           <p className="text-muted-foreground text-sm mb-2">版权所有 © {new Date().getFullYear()} west2-online.</p>
-          <div className="text-muted-foreground text-sm flex justify-center">
+          <div className="text-muted-foreground text-sm justify-center">
             <a
               href="https://beian.miit.gov.cn/#/Integrated/index"
               target="_blank"
@@ -28,7 +28,7 @@ function App() {
               闽ICP备19020557号-3
             </a>
             <img src={BeianLogo} className="inline-block w-4 h-4 ml-2 mr-1" />
-            <div>闽公网安备35018302000171号</div>
+            <a>闽公网安备35018302000171号</a>
           </div>
         </div>
       </footer>
