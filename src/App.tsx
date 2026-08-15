@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from '@/pages/Home';
 import NotFound from '@/pages/NotFound';
 import FriendInvite from '@/pages/FriendInvite';
+import FdxyScheme from '@/pages/FdxyScheme';
 import { Toaster } from 'sonner';
 import BeianLogo from '@/assets/images/beian.png';
 
@@ -12,6 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/friend/invite" element={<FriendInvite />} />
+          <Route path="/dev/fdxy-scheme" element={<FdxyScheme />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Toaster theme="system" richColors position="top-center" />
